@@ -13,6 +13,7 @@ class popview: ETPopupView {
     var selBlock:((_ text: String) -> ())?
     override func awakeFromNib() {
         super.awakeFromNib()
+        self.frame.size = CGSize(width: UIScreen.main.bounds.width/3 * 2, height: 200)
         // 设置时间
         animationDuration = 0.3
         // 设置弹出类型 sheet/alert/custom
@@ -22,7 +23,6 @@ class popview: ETPopupView {
     }
     
     @IBAction func action(_ sender: Any) {
-        
         selBlock?("hello")
         self.hide()
     }
